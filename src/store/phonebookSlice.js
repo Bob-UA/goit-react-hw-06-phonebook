@@ -14,6 +14,7 @@ export const phonebookSlice = createSlice({
       };
         state.contacts.find(option => option.name === contact.name) ? alert(`${contact.name} is already in contacts`) : state.contacts = [...state.contacts, contact];
       },
+      
       deleteContact: (state, action) => {
         //   state.contacts = state.contacts.filter(contact => contact.id !== action.contactId);
         // setContacts(prevState => prevState.filter(
