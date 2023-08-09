@@ -1,20 +1,22 @@
 import { useState } from 'react';
 import css from "./ContactForm.module.css";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addContact } from 'Redux/phonebookSlice';
 import { nanoid } from '@reduxjs/toolkit';
+import { GetContacts } from 'Redux/selectors';
 
 
 
 function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-    const contacts = useSelector(state => state.phonebook.contacts);
-
-    const dispatch = useDispatch();
-
+  
   const nameInput = nanoid();
   const phoneInput = nanoid();
+
+  const contacts = GetContacts();
+
+  const dispatch = useDispatch();
 
   const handleChange = e => {
     const target = e.currentTarget;
