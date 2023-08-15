@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import css from "./ContactForm.module.css";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'Redux/phonebookSlice';
 import { nanoid } from '@reduxjs/toolkit';
-import { GetContacts } from 'Redux/selectors';
+import { getContacts } from 'Redux/selectors';
 
 
 
@@ -14,7 +14,7 @@ function ContactForm() {
   const nameInput = nanoid();
   const phoneInput = nanoid();
 
-  const contacts = GetContacts();
+  const contacts = useSelector(getContacts);
 
   const dispatch = useDispatch();
 

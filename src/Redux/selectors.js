@@ -1,9 +1,3 @@
-import { useSelector } from "react-redux";
 
-export const GetContacts = () => {
-    return useSelector(state => state.phonebook.contacts);
-}
-export const GetFilter = () => {
-    return useSelector(state => state.phonebook.filter);
-
-}
+export const getContacts = state => state.phonebook.contacts;
+export const getFilter = state => state.phonebook.filter;

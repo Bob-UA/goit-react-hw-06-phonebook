@@ -1,14 +1,14 @@
 import { nanoid } from '@reduxjs/toolkit';
 import css from './ContactList.module.css'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'Redux/phonebookSlice';
-import { GetContacts, GetFilter } from 'Redux/selectors';
+import { getContacts, getFilter } from 'Redux/selectors';
 
 
 
 function ContactList () {
-  const contacts = GetContacts();
-  const filter = GetFilter();
+  const contacts = useSelector(getContacts);
+  const filter = useSelector(getFilter);
 
   const dispatch = useDispatch();
 
